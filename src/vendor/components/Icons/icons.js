@@ -1,9 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 
 const icons = {
-    message: faEnvelope
+    user: faUser,
+    message: faEnvelope,
+    lock: faLock
 };
 
 export const Icon = ({

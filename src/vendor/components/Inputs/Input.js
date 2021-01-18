@@ -67,7 +67,9 @@ const Input = ({
                 value={value}
             />
             <span style={{
-                color: 'red'
+                color: 'red',
+                fontWeight: '100',
+                fontSize: '0.75em'
             }}>{error}</span>
         </div>
     } else {
@@ -85,7 +87,9 @@ const Input = ({
                 />
             </div>
             <span style={{
-                color: 'red'
+                color: 'red',
+                fontWeight: '100',
+                fontSize: '0.75em'
             }}>{error}</span>
         </div>
     }

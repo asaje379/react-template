@@ -6,6 +6,7 @@ const Button = ({
     rounded = false,
     expand = false,
     color = 'primary',
+    style = {},
     children
 }) => {
 
@@ -16,7 +17,7 @@ const Button = ({
     css += ' ' + classes[color];
     console.log(css);
 
-    return <button className={css}>{children}</button>
+    return <button className={css} style={style}>{children}</button>
 };
 
 export default Button;

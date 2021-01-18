@@ -13,6 +13,7 @@
         color: #444;
         font-size: 1.2em;
         margin-top: 10px;
+        background-color: transparent;
         
         &:hover {
             border: solid 1px $secondary;
@@ -29,11 +30,15 @@
     }
 
     .icon {
-        margin-right: 7px;
+        // margin-right: 4px;
+        color: #444;
     }
+
+    margin: 10px;
 }
 
 .input2 {
+    margin-bottom: 30px;
     .inputt {
         display: flex;
         align-items: center;
@@ -47,12 +52,18 @@
             padding: 14px 15px;
             outline: none;
             color: #444;
+            background-color: transparent;
             font-size: 1.2em;
         }
 
         &:hover {
             border: solid 1px $secondary;
         }
+    }
+
+    .icon {
+        // margin-right: 4px;
+        color: #444;
     }
 
     border: none;

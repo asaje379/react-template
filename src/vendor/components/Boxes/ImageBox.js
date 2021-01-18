@@ -5,6 +5,7 @@ const ImageBox = ({
     opacity = '0.5',
     width = 'auto',
     height = 'auto',
+    minHeight = 'auto',
     children
 }) => {
 
@@ -20,7 +21,8 @@ const ImageBox = ({
         justifyContent: 'center',
         alignItems: 'center',
         width,
-        height
+        height,
+        minHeight
     }}>
         {children}
     </div>);

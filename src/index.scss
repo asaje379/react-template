@@ -16,4 +16,16 @@ code {
     monospace;
 }
 
+@media (max-width: 800px) {
+  * {
+    font-size: 0.98em;
+  }
+}
+
+@media (max-width: 470px) {
+  * {
+    font-size: 0.95em;
+  }
+}
+
 @import './vendor/scss/colors';
