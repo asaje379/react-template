@@ -1,0 +1,57 @@
+@import '../../../vendor/scss/colors';
+
+.btn {
+    border: none;
+    padding: 10px 20px;
+    border: solid 1px;
+    outline: none;
+
+    &:hover {
+        box-shadow: 0 0 5px 0 #999;
+        cursor: pointer;
+        transform: scale(1.01);
+    }
+}
+
+.rounded {
+    border-radius: 3px;
+}
+
+.outline {
+    background-color: transparent !important;
+    color: #000 !important;
+}
+
+.expand {
+    width: 100%;
+}
+
+.primary {
+    @include bg-primary;
+    border-color: $primary;
+}
+
+.secondary {
+    @include bg-secondary;
+    border-color: $secondary;
+}
+
+.success {
+    @include bg-success;
+    border-color: $success;
+}
+
+.danger {
+    @include bg-danger;
+    border-color: $danger;
+}
+
+.light {
+    @include bg-light;
+    border-color: $light;
+}
+
+.dark {
+    @include bg-dark;
+    border-color: $dark;
+}

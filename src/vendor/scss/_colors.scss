@@ -1,0 +1,45 @@
+$primary: midnightblue;
+$secondary: orange;
+$success: green;
+$danger: maroon;
+$white: #fff;
+$light: #f5f5f5;
+$dark: #333;
+$gray: #777;
+
+@mixin color-text($color) {
+    color: $color;
+}
+
+@mixin bg($bg, $fg) {
+    background-color: $bg;
+    color: $fg;
+}
+
+@mixin text-primary {
+    @include color-text($primary);
+}
+
+@mixin bg-primary {
+    @include bg($primary, $light);
+}
+
+@mixin bg-secondary {
+    @include bg($secondary, $light);
+}
+
+@mixin bg-success {
+    @include bg($success, $light);
+}
+
+@mixin bg-danger {
+    @include bg($danger, $light);
+}
+
+@mixin bg-light {
+    @include bg($light, $dark);
+}
+
+@mixin bg-dark {
+    @include bg($dark, $light);
+}
