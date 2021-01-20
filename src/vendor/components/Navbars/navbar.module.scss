@@ -1,0 +1,99 @@
+@import '../../../vendor/scss/colors';
+
+@mixin c-absolute() {
+    position: absolute;
+    left: 0;
+    display: flex;
+    padding: 5px 10px;
+}
+
+.absolute {
+    @include c-absolute();
+}
+ 
+.sidebar {
+    @include c-absolute();
+    width: 270px;
+    flex-direction: column;
+    padding: 10px !important;
+    height: 100%; 
+    box-shadow: 5px 0 10px 0 #aaa;
+    background-color: $gray;
+    z-index: 2;
+    color: #fff;
+    font-size: 0.85em;
+}
+
+.sb-company {
+    display: flex;
+    align-items: center;    
+    padding-bottom: 10px;
+    border-bottom: solid 1px $light;
+
+    img {
+        border-radius: 50%;
+    }
+
+    div:last-child {
+        margin-left: 10px;
+        font-weight: 900;
+        font-size: 2em;
+    }
+}
+
+.lk-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 40px 0 15px 0;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 10px;
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+.lk-label {
+    margin-left: 15px;
+}
+
+.lk-group {
+    color: #ddd;
+    margin: 7px;
+}
+
+.toolbar {
+    @include c-absolute();
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    background-color: $primary;
+    color: #fff;
+    padding: 10px 30px;
+
+    img {
+        border-radius: 50%;
+    }
+}
+
+.statusbar {
+    @include c-absolute();
+    width: 100%;
+    flex-direction: row;
+    bottom: 0;
+    background-color: $dark;
+}

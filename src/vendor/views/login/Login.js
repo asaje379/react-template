@@ -9,8 +9,12 @@ import Title from '../../components/Typography/Title';
 
 import classes from './login.module.scss';
 import Button from '../../components/Buttons/Button';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
+
+    const history = useHistory();
+
     return <ImageBox width="100vw" height="100vh" url={bkgd}>
         <Grid width="80%" bgColor="#fff" justify="around">
             <Col>
@@ -23,7 +27,9 @@ const Login = () => {
                 <Title type="h4" thin padding="5px 0">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, quod.
                 </Title>
-                <form className={classes.form}>
+                <form className={classes.form} onSubmit={() => {
+                    history.push('/admin');
+                }}>
                     <Input required placeholder='Adresse email' type="email" icon="message" />
                     <Input required placeholder='Mot de passe' type="password" minLength="8" icon="lock" />
                     <Button color="success" rounded expand>Connexion</Button>
