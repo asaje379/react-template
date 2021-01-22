@@ -2,10 +2,10 @@ import React from 'react';
 import classes from './window.module.scss';
 
 const Window = ({
-    left = '0',
+    left = '0px',
     top = '0',
     bgColor = '$fafafa',
-    padding = '50px',
+    padding = '30px',
     overflow = 'auto',
     children
 }) => {

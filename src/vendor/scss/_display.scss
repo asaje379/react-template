@@ -1,0 +1,99 @@
+.d-flex {
+    display: flex;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.jc-btw {
+    justify-content: space-between;
+}
+
+.jc-ard {
+    justify-content: space-around;
+}
+
+.fxd-row {
+    flex-direction: row;
+}
+
+.fxd-col {
+    flex-direction: column;
+}
+
+.lst-none {
+    list-style-type: none;
+}
+
+// Heights & Widths
+.h-100 {
+    height: 100%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+// Borders
+.bd-solid {
+    border-style: solid;
+}
+
+.bdb-solid {
+    border-bottom-style: solid;
+}
+.bdt-solid {
+    border-top-style: solid;
+}
+.bdl-solid {
+    border-left-style: solid;
+}
+
+.bd-w-1 {
+    border-width: 1px;
+}
+
+.bd-w-3 {
+    border-width: 3px;
+}
+
+.bd-w-5 {
+    border-width: 5px;
+}
+
+.bd-w-10 {
+    border-width: 3px;
+}
+
+.bd-primary {
+    border-color: $primary;
+}
+
+.bd-danger {
+    border-color: $danger;
+}
+
+.bd-secondary {
+    border-color: $secondary;
+}
+
+.bd-dark {
+    border-color: $dark;
+}
+
+.bd-light {
+    border-color: $light;
+}
+
+.bd-rd-5 {
+    border-radius: 5px;
+}
+
+.bd-rd-50 {
+    border-radius: 50%;
+}

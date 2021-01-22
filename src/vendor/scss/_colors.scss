@@ -1,5 +1,5 @@
 $primary: midnightblue;
-$secondary: orange;
+$secondary: rgb(209, 137, 4);
 $success: green;
 $danger: maroon;
 $white: #fff;
@@ -16,9 +16,30 @@ $gray: #777;
     color: $fg;
 }
 
-@mixin text-primary {
+.text-primary {
     @include color-text($primary);
 }
+
+.text-secondary {
+    @include color-text($secondary);
+}
+
+.text-success {
+    @include color-text($primary);
+}
+
+.text-danger {
+    @include color-text($danger);
+}
+
+.text-dark {
+    @include color-text($dark);
+}
+
+.text-light {
+    @include color-text($light);
+}
+
 
 @mixin bg-primary {
     @include bg($primary, $light);
@@ -42,4 +63,76 @@ $gray: #777;
 
 @mixin bg-dark {
     @include bg($dark, $light);
+}
+
+.bg-primary {
+    @include bg($primary, $light);
+}
+
+.bg-secondary {
+    @include bg($secondary, $light);
+}
+
+.bg-success {
+    @include bg($success, $light);
+}
+
+.bg-danger {
+    @include bg($danger, $light);
+}
+
+.bg-light {
+    @include bg($light, $dark);
+}
+
+.bg-dark {
+    @include bg($dark, $light);
+}
+
+.primary-hover {
+    &:hover {
+        background-color: $primary;
+        color: $light;
+        cursor: pointer;
+    }
+}
+
+.secondary-hover {
+    &:hover {
+        background-color: $secondary;
+        color: $light;
+        cursor: pointer;
+    }
+}
+
+.success-hover {
+    &:hover {
+        background-color: $success;
+        color: $light;
+        cursor: pointer;
+    }
+}
+
+.danger-hover {
+    &:hover {
+        background-color: $danger;
+        color: $light;
+        cursor: pointer;
+    }
+}
+
+.light-hover {
+    &:hover {
+        background-color: $light;
+        color: $dark;
+        cursor: pointer;
+    }
+}
+
+.dark-hover {
+    &:hover {
+        background-color: $dark;
+        color: $light;
+        cursor: pointer;
+    }
 }

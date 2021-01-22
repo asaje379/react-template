@@ -7,6 +7,7 @@ const Title = ({
     margin = '10px 0',
     padding = '5px 10px',
     align = 'left',
+    color = '#555',
     children
 }) => {
 
@@ -26,7 +27,7 @@ const Title = ({
         return <div style={{
             fontWeight: thin ? '100' : '900',
             fontSize: sizes[type],
-            color: "#555",
+            color: color,
             borderBottom: rule ? 'solid 1px #ddd' : null,
             margin: margin,
             padding: padding,

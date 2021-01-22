@@ -1,0 +1,18 @@
+@import '../vendor/scss/colors';
+
+.sub-ul {
+    border-left: solid 5px $secondary;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: inherit;
+    padding: 10px 0 10px 20px;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.sub-ul-show {
+    height: auto;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}

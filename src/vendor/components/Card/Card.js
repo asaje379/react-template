@@ -1,8 +1,11 @@
 import React from 'react';
-import classes from './card.module.scss';
 
-const Card = () => {
+const Card = ({
+    children
+}) => {
     return <div className="card">
-        <div className="card-header"></div>
+        {children}
     </div>
 };
+
+export default Card;

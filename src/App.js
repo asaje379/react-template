@@ -6,9 +6,8 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import Login from './vendor/views/login/Login';
-import Dashboard from './vendor/views/admin/Dashboard';
-import Test from './vendor/views/test/Test';
+import Login from './views/Login';
+import Admin from './views/Admin';
 
 function App() {
   return (
@@ -18,7 +17,9 @@ function App() {
           <Redirect to="/login" />
         </Route>
         <Route path="/login" exact component={Login} />
-        <Route path="/admin" component={Dashboard} />
+        <Route path="/admin" component={Admin}>
+          {/* <Redirect to="/admin/dashboard"/> */}
+        </Route>
       </Switch>
     </Router>
   );

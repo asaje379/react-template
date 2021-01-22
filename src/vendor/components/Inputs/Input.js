@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classes from './Input.module.scss';
-import { Icon } from '../Icons/icons';
+import { Icon } from '../Icons/Icon';
 
 const Input = ({
     label = '',
