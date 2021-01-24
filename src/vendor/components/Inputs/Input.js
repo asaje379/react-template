@@ -20,7 +20,8 @@ const Input = ({
     minMsg = 'Valeur minimale requise : ',
     maxMsg = 'Valeur minimale requise : ',
     minLengthMsg = '$ caractères minimum !',
-    maxLengthMsg = '$ caractères maximu !',
+    maxLengthMsg = '$ caractères maximum !',
+    onChange
 }) => {
 
     const [value, setValue] = useState(defaultValue);
@@ -29,6 +30,7 @@ const Input = ({
     const handleChange = (ev) => {
         const currentValue = ev.target.value;
         setValue(currentValue);
+        onChange(currentValue);
 
         if (required) {
             if (currentValue.length === 0) {

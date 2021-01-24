@@ -3,24 +3,26 @@
 .datatable {
     border-radius: 3px;
     padding: 10px;
-    box-shadow: 0 0 2px 0 $gray;
+    box-shadow: 0 0 5px 0 $gray;
     margin-top: 20px;
-    
 }
 
 .table {
     width: 100%;
     border-collapse: collapse;
+    color: $dark;
 
     th,
     td {
         border: solid 1px $light-gray;
-        padding: 5px;
+        padding: 10px;
+        text-align: left;
     }
 
     th {
         text-transform: uppercase;
-        font-weight: 300;
+        font-weight: 600;
+        letter-spacing: 1px;
     }
 
     th:first-child {

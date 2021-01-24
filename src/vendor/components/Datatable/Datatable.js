@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { fixture } from './fixture'
 import Select from '../Inputs/Select';
 import Option from '../Inputs/Option';
@@ -11,8 +11,15 @@ export default function Datatable({
     data = _DATA
 }) {
     const attrs = Object.keys(data[0]);
-    const values = data.map(el => Object.values(el));
-    console.log(values);
+    const values = data.map(el => Object.values(el).map(it => {
+        if (typeof it === typeof new Date()) {
+            return it.toLocaleDateString();
+        }
+        return it;
+    }));
+
+    const [dataValues, setData] = useState(values);
+    const [dataCopie, setDataCopie] = useState(values);
 
     return (
         <div className="datatable">
@@ -22,7 +29,18 @@ export default function Datatable({
                     <Option value="pdf">Exporter en PDF</Option>
                 </Select>
 
-                <Input icon="search" placeholder="Rechercher" />
+                <Input onChange={value => {
+                    const str = value.toLowerCase();
+                    const s = [];
+                    const converted = dataCopie.map(it => it.join(' '));
+                    for (let i = 0; i < converted.length; ++i) {
+                        if (converted[i].indexOf(str) !== -1) {
+                            s.push(dataCopie[i]);
+                        }
+                    }
+                    setData(s);
+                    console.log(s)
+                }} icon="search" placeholder="Rechercher" />
             </div>
             <div>
                 <table className="table">
@@ -39,8 +57,13 @@ export default function Datatable({
                         </tr>
                     </thead>
                     <tbody>
-                        {values.map((el, index) => <tr key={index}>
-
+                        {dataValues.map((el, index) => <tr key={index}>
+                            <td className="checkbox-th">
+                                <div>
+                                    <Checkbox />
+                                </div>
+                            </td>
+                            {el.map((it, idx) => <td key={idx}>{it}</td>)}
                         </tr>)}
                     </tbody>
                 </table>

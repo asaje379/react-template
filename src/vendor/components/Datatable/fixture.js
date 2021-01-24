@@ -10,7 +10,7 @@ export function fixture(nbr) {
             gender: 'MF'[Math.floor(Math.random() * 2)],
             price: Math.floor(Math.random() * 1000),
             email: genWord() + '@gmail.com',
-            date: new Date(Date.now() + Math.floor(Math.random() * 1000000000))
+           date: new Date(Date.now() + Math.floor(Math.random() * 1000000000))
         })
     }
     return data;
