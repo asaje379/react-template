@@ -22,7 +22,7 @@ export default function Datatable({
                     <Option value="pdf">Exporter en PDF</Option>
                 </Select>
 
-                <Input placeholder="Rechercher" />
+                <Input icon="search" placeholder="Rechercher" />
             </div>
             <div>
                 <table className="table">

@@ -25,16 +25,6 @@ export default function Dashboard() {
                 </Col>
             </Grid>
 
-            <Checkbox />
-            <Checkbox color="success">Label</Checkbox>
-
-            <Select>
-                <Option disabled value="1">Option 1</Option>
-                <Option value={{x: 3}}>Option 2</Option>
-                <Option>Option 3</Option>
-                <Option value="Coucou">Option 4</Option>
-            </Select>
-
             <Datatable />
         </div>
     )

@@ -12,7 +12,7 @@ export default function StatisticsCard({
     title = 'Lorem ipsum',
     totalValue = Math.ceil(Math.random() * 1000) + '',
     color = null,
-    type = 'line',
+    type = null,
     labels = null,
     values = null
 }) {
@@ -49,9 +49,9 @@ export default function StatisticsCard({
                     <Title color={color && '#fff'} align="right" thin type="h5">{title}</Title>
                 </div>
             </CardHeader>
-            <CardContent>
+            {type ? <CardContent>
                 <Chart />
-            </CardContent>
+            </CardContent>: null}
         </Card>
     )
 }

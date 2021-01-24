@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faLock, faUser, faChartBar, faHome, faAngleRight, faList, faBook, faBars, faCog, faToolbox, faTools, faCheck, faCheckCircle, faAngleDown, faChartLine, faChartPie, faChartArea } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faLock, faUser, faChartBar, faHome, faAngleRight, faList, faBook, faBars, faCog, faToolbox, faTools, faCheck, faCheckCircle, faAngleDown, faChartLine, faChartPie, faChartArea, faSearch } from '@fortawesome/free-solid-svg-icons';
 import classes from './icon.module.scss';
 
 const icons = {
@@ -20,7 +20,8 @@ const icons = {
     book: faBook,
     tools: faTools,
     check: faCheck,
-    checkCircle: faCheckCircle
+    checkCircle: faCheckCircle,
+    search: faSearch
 };
 
 export const Icon = ({
