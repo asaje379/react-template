@@ -13,8 +13,8 @@ const Col = ({
 
     useEffect(() => {
       window.addEventListener('resize', () => {
-        setMargin(window.innerWidth < 800 ? (margin * 10) + 'px': '0px');
-      })
+        setMargin(window.innerWidth < 800 ? (margin * 5) + 'px': '0px');
+      });
     });
 
     return <div style={{

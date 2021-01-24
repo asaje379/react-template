@@ -1,0 +1,22 @@
+@mixin checkboxSize() {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    border: solid 1px #999;
+    border-radius: 1px;
+    padding: 4px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.checkbox {
+    @include checkboxSize();
+}
+
+.labeled-checkbox {
+    @include checkboxSize();
+    margin-right: 8px;
+}

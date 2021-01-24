@@ -1,3 +1,5 @@
+@import "./colors";
+
 .d-flex {
     display: flex;
 }
@@ -37,6 +39,10 @@
 
 .w-100 {
     width: 100%;
+}
+
+.w-auto {
+    width: min-content !important;
 }
 
 // Borders
@@ -96,4 +102,48 @@
 
 .bd-rd-50 {
     border-radius: 50%;
+}
+
+// Select and options hover
+.select-zone {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    border: solid 1px $light-gray;
+    border-radius: 3px;
+}
+
+.select {
+    position: relative;
+}
+
+.options {
+    border: solid 1px $light-gray;
+    border-radius: 3px;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+.option {
+    width: 100%;
+    background-color: #fff;
+    color: $gray;
+    padding: 5px 12px;
+    &:hover {
+        background-color: $primary;
+        color: $light;
+        cursor: pointer;
+    }
+}
+
+.option-disabled {
+    background-color: $light-gray;
+
+    &:hover {
+        background-color: $light-gray;
+        color: $gray;
+        cursor: auto;
+    }
 }

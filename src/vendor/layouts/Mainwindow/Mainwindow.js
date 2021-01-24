@@ -11,6 +11,7 @@ import Plan from '../../../components/Plan';
 import Dashboard from '../../../views/Dashboard';
 
 const Mainwindow = ({
+    image = null,
     sidebar = null,
 }) => {
 
@@ -18,7 +19,7 @@ const Mainwindow = ({
     const history = useHistory();
 
     return <div>
-        <Sidebar opened={!hideSidebar}>{sidebar}</Sidebar>
+        <Sidebar image={image} opened={!hideSidebar}>{sidebar}</Sidebar>
         <Window left={hideSidebar ? '0px' : '270px'} overflow="hidden">
             <Toolbar>
                 <div className="d-flex ai-center">

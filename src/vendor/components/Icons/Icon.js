@@ -25,12 +25,16 @@ const icons = {
 
 export const Icon = ({
     name,
+    color,
     onClick,
+    weight,
     size
 }) => <FontAwesomeIcon 
         onClick={onClick} 
         className={classes.icon} 
         icon={icons[name]}
         style={{
-            fontSize: `${size}em`
+            fontSize: `${size}em`,
+            color,
+            fontWeight: weight
         }}  />;

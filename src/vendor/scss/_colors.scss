@@ -1,11 +1,12 @@
-$primary: midnightblue;
-$secondary: rgb(209, 137, 4);
+$primary: rgb(38, 89, 136);
+$secondary: rgb(224, 148, 6);
 $success: green;
 $danger: maroon;
 $white: #fff;
 $light: #f5f5f5;
 $dark: #333;
 $gray: #777;
+$light-gray: #ccc;
 
 @mixin color-text($color) {
     color: $color;
@@ -88,6 +89,31 @@ $gray: #777;
 .bg-dark {
     @include bg($dark, $light);
 }
+
+.border-primary {
+    border: solid 1px $primary !important;
+}
+
+.border-secondary {
+    border: solid 1px $secondary !important;
+}
+
+.border-success {
+    border: solid 1px $success !important;
+}
+
+.border-danger {
+    border: solid 1px $danger !important;
+}
+
+.border-light {
+    border: solid 1px $light !important;
+}
+
+.border-dark {
+    border: solid 1px $dark !important;
+}
+
 
 .primary-hover {
     &:hover {
