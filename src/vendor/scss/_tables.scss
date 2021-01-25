@@ -4,7 +4,7 @@
     border-radius: 3px;
     padding: 10px;
     box-shadow: 0 0 5px 0 $gray;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .table {
@@ -39,4 +39,9 @@
             justify-content: center;
         }
     }
+}
+
+.table-container {
+    width: 100%;
+    overflow: auto;
 }

@@ -8,7 +8,8 @@ export default function Admin() {
         <div>
             <Mainwindow 
                 image={img}
-                sidebar={<Sidebar />} />
+                // sidebar={<Sidebar />} 
+                />
         </div>
     )
 }

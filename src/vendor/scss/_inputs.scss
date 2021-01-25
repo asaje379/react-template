@@ -36,18 +36,19 @@
 }
 
 .options {
-    border: solid 1px $light-gray;
-    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 $gray;
+    border-radius: 7px;
     position: absolute;
     z-index: 10;
     width: 100%;
+    transition: all 0.5s ease-in-out;
 }
 
 .option {
     width: 100%;
-    background-color: #fff;
-    color: $gray;
-    padding: 5px 12px;
+    background-color: #ffff;
+    color: $dark;
+    padding: 10px 12px;
     &:hover {
         background-color: $primary;
         color: $light;
@@ -62,5 +63,17 @@
         background-color: $light-gray;
         color: $gray;
         cursor: auto;
+    }
+}
+
+@media (max-width: 800px) {
+    .checkbox {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .labeled-checkbox {
+        width: 16px;
+        height: 16px;
     }
 }

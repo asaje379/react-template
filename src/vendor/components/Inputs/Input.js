@@ -21,7 +21,8 @@ const Input = ({
     maxMsg = 'Valeur minimale requise : ',
     minLengthMsg = '$ caractères minimum !',
     maxLengthMsg = '$ caractères maximum !',
-    onChange
+    onChange = () => {},
+    mb = '30px'
 }) => {
 
     const [value, setValue] = useState(defaultValue);
@@ -75,7 +76,9 @@ const Input = ({
             }}>{error}</span>
         </div>
     } else {
-        return <div className={classes.input2}>
+        return <div className={classes.input2} style={{
+            marginBottom: mb
+        }}>
             <div className={classes.inputt}>
                 {icon ? <div className={classes.icon}>
                     <Icon name={icon} />

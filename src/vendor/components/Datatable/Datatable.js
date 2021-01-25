@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { fixture } from './fixture'
-import Select from '../Inputs/Select';
-import Option from '../Inputs/Option';
 import Input from '../Inputs/Input';
 import Checkbox from '../Inputs/Checkbox';
+import MenuButton from '../Buttons/MenuButton';
+import MenuButtonItem from '../Buttons/MenuButtonItem';
 
 const _DATA = fixture(100);
 
@@ -19,15 +19,15 @@ export default function Datatable({
     }));
 
     const [dataValues, setData] = useState(values);
-    const [dataCopie, setDataCopie] = useState(values);
+    const [dataCopie] = useState(values);
 
     return (
         <div className="datatable">
-            <div className="d-flex jc-btw">
-                <Select defaultValue="csv" width="200px">
-                    <Option value="csv">Exporter en CSV</Option>
-                    <Option value="pdf">Exporter en PDF</Option>
-                </Select>
+            <div className="d-flex jc-btw ai-center mb-3 fx-wrap">
+                <MenuButton width="200px" title="Exporter">
+                    <MenuButtonItem onClick={() => console.log('CSV')}>Exporter en CSV</MenuButtonItem>
+                    <MenuButtonItem onClick={() => console.log('PDF')}>Exporter en PDF</MenuButtonItem>
+                </MenuButton>
 
                 <Input onChange={value => {
                     const str = value.toLowerCase();
@@ -39,10 +39,9 @@ export default function Datatable({
                         }
                     }
                     setData(s);
-                    console.log(s)
-                }} icon="search" placeholder="Rechercher" />
+                }} icon="search"  mb="0" placeholder="Rechercher" />
             </div>
-            <div>
+            <div className="table-container">
                 <table className="table">
                     <thead>
                         <tr>

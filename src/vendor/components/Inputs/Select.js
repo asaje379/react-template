@@ -3,12 +3,20 @@ import { Icon } from '../Icons/Icon'
 
 export default function Select({
     defaultValue,
+    defaultText,
     width,
     children
 }) {
 
+    let defaultOption = null;
+    Children.forEach(children, child => {
+        if(child.props.value === defaultValue) defaultOption = child.props.children;
+    });
+
+    if (!defaultOption) defaultOption = defaultText;
+
     const [value, setValue] = useState(defaultValue);
-    const [option, setOption] = useState(defaultValue);
+    const [option, setOption] = useState(defaultOption);
     const [opened, setOpened] = useState(false);
 
     useEffect(() => {
