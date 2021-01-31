@@ -7,17 +7,18 @@ const Button = ({
     expand = false,
     color = 'primary',
     style = {},
+    onClick = () => {},
     children
 }) => {
 
     let css = classes.btn;
-    if (outline) css += ' ' + classes.outline;
+    css += ' ' + classes[color];
+    if (outline) css += ' ' + classes.outline + ' text-'+color;
     if (expand) css += ' ' + classes.expand;
     if (rounded) css += ' ' + classes.rounded;
-    css += ' ' + classes[color];
     console.log(css);
 
-    return <button className={css} style={style}>{children}</button>
+    return <button onClick={onClick} className={css} style={style}>{children}</button>
 };
 
 export default Button;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ImageBox from '../../components/Boxes/ImageBox';
 import opencts from '../../../assets/opencts.png';
 import Title from '../../components/Typography/Title';
@@ -6,8 +6,14 @@ import Input from '../../components/Inputs/Input';
 import Button from '../../components/Buttons/Button';
 import Grid from '../../layouts/Grid/Grid';
 import Col from '../../layouts/Grid/Col';
+import Toast from '../../components/Dialogs/Toast';
+import Confirm from '../../components/Dialogs/Confirm';
 
 const Test = () => {
+
+    const [showToast, setShowToast] = useState(false);
+    const [showConfirm, setShowConfirm] = useState(false);
+
     return (<div>
         <Title rule align="right">Image Box</Title>
         <ImageBox url={opencts} opacity="0.75" width="300px" height="300px" >
@@ -22,7 +28,7 @@ const Test = () => {
         <Title>Hello !</Title>
         <Title thin>Hello !</Title>
         <Title type="h2">Hello !</Title>
-        <Title type="h2" thin>Hello !</Title>
+        <Title type="h2" veryThin>Hello !</Title>
         <Title type="h3">Hello !</Title>
         <Title type="h3" thin>Hello !</Title>
         <Title type="h4">Hello !</Title>
@@ -97,6 +103,20 @@ const Test = () => {
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus fugit iure nam nesciunt quo commodi aliquam voluptate. Ipsa voluptatum officiis numquam architecto vero doloribus ut tenetur perspiciatis expedita aperiam assumenda maxime dicta saepe nisi, quo ad esse facere amet. Vel consectetur, dicta necessitatibus doloremque incidunt hic quia itaque debitis iure!
             </Col>
         </Grid>
+
+        <Title rule align="right">Toasts</Title>
+        <Button onClick={() => setShowToast(true)}>Open Toast !</Button>
+        <Toast color="danger" open={showToast} setOpen={setShowToast} seconds={2}>
+            This is an awesome toast !
+        </Toast>
+
+        <Title rule align="right">Confirms</Title>
+        <Button onClick={() => setShowConfirm(true)}>Open Confirm !</Button>
+        <Confirm onConfirm={() => alert('ok')} open={showConfirm} setOpen={setShowConfirm} />
+
+        <Title rule align="right">Modals</Title>
+        <Button onClick={() => setShowConfirm(true)}>Open Confirm !</Button>
+        <Confirm onConfirm={() => alert('ok')} open={showConfirm} setOpen={setShowConfirm} />
     </div>)
 };
 

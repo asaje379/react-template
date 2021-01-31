@@ -3,6 +3,7 @@ import React from 'react';
 const Title = ({
     type = 'h1',
     thin = false,
+    veryThin = false,
     rule = false,
     margin = '10px 0',
     padding = '5px 10px',
@@ -20,22 +21,18 @@ const Title = ({
         h6: '0.85em',
     };
 
-    if (!'h1-h2-h3-h4-h5-h6'.split('-').includes(type)) {
-        console.error('Unsupported type !')
-        return <></>;
-    } else {
-        return <div style={{
-            fontWeight: thin ? '100' : '900',
-            fontSize: sizes[type],
-            color: color,
-            borderBottom: rule ? 'solid 1px #ddd' : null,
-            margin: margin,
-            padding: padding,
-            textAlign: align
-        }}>
-            {children}
-        </div>;
-    }
+    
+    return <div style={{
+        fontWeight: thin ? '300' : (veryThin ? '100' : '900'),
+        fontSize: sizes[type],
+        color: color,
+        borderBottom: rule ? 'solid 1px #ddd' : null,
+        margin: margin,
+        padding: padding,
+        textAlign: align
+    }}>
+        {children}
+    </div>;
 };
 
 export default Title;

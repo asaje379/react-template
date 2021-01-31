@@ -25,7 +25,7 @@ export default function Dashboard() {
                 </Col>
             </Grid>
 
-            <Datatable />
+            <Datatable onSelectionChange={values => console.log(values)} />
         </div>
     )
 }
