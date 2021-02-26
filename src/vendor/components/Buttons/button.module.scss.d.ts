@@ -2,10 +2,12 @@ declare namespace ButtonModuleScssNamespace {
   export interface IButtonModuleScss {
     'bg-danger': string;
     'bg-dark': string;
+    'bg-gray': string;
     'bg-light': string;
     'bg-primary': string;
     'bg-secondary': string;
     'bg-success': string;
+    'bg-white': string;
     'border-danger': string;
     'border-dark': string;
     'border-light': string;
@@ -18,6 +20,7 @@ declare namespace ButtonModuleScssNamespace {
     dark: string;
     'dark-hover': string;
     expand: string;
+    lg: string;
     light: string;
     'light-hover': string;
     outline: string;
@@ -34,6 +37,7 @@ declare namespace ButtonModuleScssNamespace {
     'text-primary': string;
     'text-secondary': string;
     'text-success': string;
+    'text-white': string;
   }
 }
 

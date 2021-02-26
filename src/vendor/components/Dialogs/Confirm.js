@@ -6,9 +6,9 @@ import Button from '../Buttons/Button'
 export default function Confirm({
     title = 'Confirmation',
     open = false,
-    setOpen = () => {},
-    onConfirm = () => {},
-    onCancel = () => {},
+    setOpen = () => { },
+    onConfirm = () => { },
+    onCancel = () => { },
     children = 'Etes-vous sûr de vouloir effectuer cette action ?'
 }) {
 
@@ -26,17 +26,20 @@ export default function Confirm({
                         <Title thin type="h4" padding="0">{children}</Title>
                     </div>
                     <div className="footer">
-                        <Button onClick={() => {
+                        <Button lg onClick={() => {
                             setOpen(false);
                             onCancel();
-                        }} style={{marginRight: '10px'}} color="danger" rounded>Annuler</Button>
-                        <Button onClick={() => {
+                        }} style={{ marginRight: '10px' }} color="danger" rounded>Annuler</Button>
+                        <Button lg style={{
+                            backgroundColor: 'midnightblue',
+                            color: '#fff'
+                        }} onClick={() => {
                             setOpen(false);
                             onConfirm();
                         }} rounded>Confirmer</Button>
                     </div>
                 </div>
-            </div>: null}
+            </div> : null}
         </>
     )
 }

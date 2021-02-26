@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from './Input.module.scss';
 import { Icon } from '../Icons/Icon';
+import { useForm } from './Form';
 
 const Input = ({
     label = '',
@@ -22,35 +23,75 @@ const Input = ({
     minLengthMsg = '$ caractères minimum !',
     maxLengthMsg = '$ caractères maximum !',
     onChange = () => {},
-    mb = '30px'
+    formValue = {},
+    setFormValue = () => {},
+    mb = '30px',
+    value = null
 }) => {
 
-    const [value, setValue] = useState(defaultValue);
+    // const [value, setValue] = useState(defaultValue);
     const [error, setError] = useState('');
+    const clear = useForm();
+
+    // useEffect(() => {
+    //     setValue(defaultValue);
+    // }, [clear]);
 
     const handleChange = (ev) => {
         const currentValue = ev.target.value;
-        setValue(currentValue);
+        // setValue(currentValue);
         onChange(currentValue);
 
         if (required) {
             if (currentValue.length === 0) {
                 setError(requireMsg);
+                setFormValue({
+                    ...formValue,
+                    [name]: null,
+                    [name + '_error']: true,
+                });
             } else if (currentValue.length < minLength) {
                 setError(minLengthMsg.replace('$', minLength + ''));
+                setFormValue({
+                    ...formValue,
+                    [name]: null,
+                    [name + '_error']: true,
+                });
             } else if (currentValue.length > maxLength) {
                 setError(maxLengthMsg.replace('$', maxLength + ''));
+                setFormValue({
+                    ...formValue,
+                    [name]: null,
+                    [name + '_error']: true,
+                });
             } else if (type === 'email' && !/.+@.+\.[a-zA-Z]{2,8}/.test(currentValue)) {
                 setError(emailMsg);
+                setFormValue({
+                    ...formValue,
+                    [name]: null,
+                    [name + '_error']: true,
+                });
             } else {
                 setError('');
+                setFormValue({
+                    ...formValue,
+                    [name]: currentValue,
+                    [name + '_error']: false
+                });
             }
-
+        } else {
+            setFormValue({
+                ...formValue,
+                [name]: currentValue,
+                [name + '_error']: false
+            });
         }
     };
 
     if (label) {
-        return <div className={classes.input}>
+        return <div className={classes.input} style={{
+            marginBottom: mb
+        }}>
             <div className={classes.label}>
                 {icon ? <div className={classes.icon}>
                     <Icon name={icon} />
@@ -67,11 +108,11 @@ const Input = ({
                 type={type}
                 placeholder={placeholder}
                 name={name}
-                value={value}
+                min={min}
+                value={value ? value : defaultValue}
             />
             <span style={{
                 color: 'red',
-                fontWeight: '100',
                 fontSize: '0.75em'
             }}>{error}</span>
         </div>
@@ -86,14 +127,14 @@ const Input = ({
                 <input
                     onChange={handleChange}
                     type={type}
+                    min={min}
                     placeholder={placeholder + (required ? ' *' : '')}
                     name={name}
-                    value={value}
+                    value={value ? value: defaultValue}
                 />
             </div>
             <span style={{
                 color: 'red',
-                fontWeight: '100',
                 fontSize: '0.75em'
             }}>{error}</span>
         </div>

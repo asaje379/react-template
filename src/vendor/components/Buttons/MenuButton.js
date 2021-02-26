@@ -4,8 +4,6 @@ import { Icon } from '../Icons/Icon';
 export default function MenuButton({
     title,
     width,
-    top = false,
-    color = 'light',
     children
 }) {
 
@@ -16,15 +14,13 @@ export default function MenuButton({
         setOpened
     }));
 
-    const css = 'select-zone bg-' + color;
-
     return (
-        <div className="select" style={{ width }}>
-            <div className={css} onClick={() => setOpened(!opened)}>
-                <div>{title}</div>
+        <div className="select">
+            <div className="select-zone" onClick={() => setOpened(!opened)}>
+                <div className="mr-2">{title}</div>
                 <Icon name="angleDown" />
             </div>
-            {opened ? <div className={top ? 'options-top': 'options'}>
+            {opened ? <div className="options">
                 {newChildren}
             </div> : null}
         </div>

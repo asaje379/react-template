@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ImageBox from '../../components/Boxes/ImageBox';
 import Grid from '../../layouts/Grid/Grid';
 import Input from '../../components/Inputs/Input';
@@ -20,6 +20,10 @@ const Login = ({
 }) => {
 
     const history = useHistory();
+    const [credentials, setCredentials] = useState({
+        email: '',
+        password: ''
+    })
 
     return <ImageBox width="100vw" height="100vh" url={backgroundImage}>
         <Grid width="80%" bgColor="#fff" justify="around">
@@ -34,11 +38,24 @@ const Login = ({
                     {subtitle}
                 </Title>
                 <form className={classes.form} onSubmit={() => {
+                    console.log('object')
                     history.push(onLoginRedirect);
                 }}>
-                    <Input required placeholder='Adresse email' type="email" icon="message" />
-                    <Input required placeholder='Mot de passe' type="password" minLength="8" icon="lock" />
-                    <Button color="success" rounded expand>Connexion</Button>
+                    <Input 
+                        value={credentials.email} 
+                        onChange={v => setCredentials({ ...credentials, email: v })} 
+                        required 
+                        name="username"
+                        placeholder='Adresse email' type="email" icon="message" />
+
+                    <Input 
+                        required 
+                        value={credentials.password} 
+                        onChange={v => setCredentials({ ...credentials, password: v })}
+                        placeholder='Mot de passe' 
+                        name="password"
+                        type="password" minLength="8" icon="lock" />
+                    <Button type="submit" lg color="success" rounded expand>Connexion</Button>
                 </form>
             </Col>
         </Grid>

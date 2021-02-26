@@ -10,48 +10,61 @@ import { Line, Bar, Pie, Doughnut } from 'react-chartjs-2';
 export default function StatisticsCard({
     icon = 'line',
     title = 'Lorem ipsum',
+    iconColor = null,
     totalValue = Math.ceil(Math.random() * 1000) + '',
     color = null,
     type = null,
     labels = null,
-    values = null
+    values = null,
+    height = null,
+    noheader = false,
 }) {
 
     let data = {
-        labels: labels ? labels: ['L', 'M', 'X', 'J', 'V', 'S', 'D'],
+        labels: labels ? labels : ['L', 'M', 'X', 'J', 'V', 'S', 'D'],
         datasets: values ? values : [{
-            data: (new Array(7)).fill(0).map(el => Math.round(Math.random()*100))
+            data: (new Array(7)).fill(0).map(() => Math.round(Math.random() * 100))
         }]
     };
     console.log(data);
 
     const Chart = () => {
         if (type === 'line') {
-            return <Line data={data} />;
+            return <Line data={data} options={{
+                maintainAspectRatio: false
+            }} />;
         }
         if (type === 'pie') {
-            return <Pie data={data} />;
+            return <Pie data={data} options={{
+                maintainAspectRatio: false
+            }} />;
         }
         if (type === 'bar') {
-            return <Bar data={data} />;
+            return <Bar data={data} options={{
+                maintainAspectRatio: false
+            }} />;
         }
         if (type === 'doughnut') {
-            return <Doughnut data={data} />;
+            return <Doughnut data={data} options={{
+                maintainAspectRatio: false
+            }} />;
         }
     };
 
     return (
         <Card>
-            <CardHeader color={color}>
-                <Icon size="3" name={icon} />
+            {!noheader ? <CardHeader color={color}>
+                <Icon color={iconColor} size="2.5" name={icon} />
                 <div>
                     <Title color={color && '#fff'} align="right" thin type="h3">{totalValue}</Title>
                     <Title color={color && '#fff'} align="right" thin type="h5">{title}</Title>
                 </div>
-            </CardHeader>
-            {type ? <CardContent>
-                <Chart />
-            </CardContent>: null}
+            </CardHeader> : null}
+            {type ? <CardContent color={color}>
+                <div style={{ maxHeight: height ? height : 'auto' }}>
+                    <Chart />
+                </div>
+            </CardContent> : null}
         </Card>
     )
 }

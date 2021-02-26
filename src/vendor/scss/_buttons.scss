@@ -1,4 +1,15 @@
+@import './colors';;
+
 .link {
     text-decoration: none;
     color: inherit;
+}
+
+button {
+    color: #fff;
+    background-color: $secondary;
+    padding: 7px 10px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
 }

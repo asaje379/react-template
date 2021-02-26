@@ -1,33 +1,25 @@
 import React from 'react'
+import Title from '../Typography/Title';
+import { Icon } from '../Icons/Icon';
 
 export default function Modal({
-    title = 'Confirmation',
+    title = '',
     open = false,
     setOpen = () => {},
     children
 }) {
     return (
         <>
-            {open ? <div className="confirm-container">
-                <div className="confirm">
+            {open ? <div className="modal-container">
+                <div className="modal">
                     <div className="header">
-                        <Title margin="0" padding="0 0 5px 0">{title}</Title>
+                        <Title type="h3" margin="0" padding="0 0 5px 0">{title}</Title>
                         <Icon color="red" size="1.5" name="close" onClick={() => {
                             setOpen(false);
                         }} />
                     </div>
                     <div className="body">
-                        <Title thin type="h3" padding="0">{children}</Title>
-                    </div>
-                    <div className="footer">
-                        <Button onClick={() => {
-                            setOpen(false);
-                            onCancel();
-                        }} style={{marginRight: '10px'}} color="danger" rounded>Annuler</Button>
-                        <Button onClick={() => {
-                            setOpen(false);
-                            onConfirm();
-                        }} rounded>Confirmer</Button>
+                        {children}
                     </div>
                 </div>
             </div>: null}

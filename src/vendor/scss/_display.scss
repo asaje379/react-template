@@ -2,6 +2,8 @@
 
 .d-flex {
     display: flex;
+    flex-wrap: wrap;
+    line-height: 2;
 }
 
 .fx-wrap {
@@ -10,6 +12,10 @@
 
 .ai-center {
     align-items: center;
+}
+
+.ai-fxend {
+    align-items: flex-end;
 }
 
 .jc-center {
@@ -108,3 +114,34 @@
     border-radius: 50%;
 }
 
+
+// Forms
+
+.form {
+    gap: 16px 50px;
+}
+
+@media (max-width: 600px) {
+    .form {
+        gap: 0px 0px !important;
+    }
+}
+
+// Hide on responsive
+.res {
+    display: none;
+}
+
+.nres {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .res {
+        display: block;
+    }
+    
+    .nres {
+        display: none;
+    }
+}

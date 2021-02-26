@@ -1,0 +1,28 @@
+@import './colors';
+
+.list {
+    display: flex;
+    flex-direction: column;
+
+    .item {
+        border-bottom: solid 1px #ddd;
+        padding: 10px 5px;
+        margin-bottom: 20px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $secondary;
+            color: $light;
+        }
+    }
+
+    .item-no-hover {
+        border-bottom: solid 1px #ddd;
+        padding: 10px 5px;
+        margin-bottom: 20px;
+    }
+
+    .item:last-child, .item-no-hover:last-child {
+        margin-bottom: 0;
+    }
+}

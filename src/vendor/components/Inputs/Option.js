@@ -17,7 +17,6 @@ export default function Option({
         <div className={css} onClick={() => {
             if (!disabled) {
                 setValue(value);
-                console.log(children);
                 setOption(children);
                 setOpened(!opened)
             }

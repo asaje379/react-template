@@ -1,7 +1,9 @@
 import React from 'react'
+import Title from '../Typography/Title';
 
 export default function CardHeader({
     color = null,
+    rule = false,
     children
 }) {
 
@@ -9,7 +11,6 @@ export default function CardHeader({
     if (color) {
         css += ' bg-' + color; 
     }
-
     return (
         <div className={css}>
             {children}

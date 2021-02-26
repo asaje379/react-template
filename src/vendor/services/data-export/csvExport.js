@@ -21,6 +21,5 @@ export function csvExport(data, name) {
 
     setTimeout(() => {
         window.URL.revokeObjectURL(fileURI);
-    }, 1000);
-    
+    }, 1000); 
 }

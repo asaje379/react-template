@@ -2,7 +2,7 @@
 
 .btn {
     border: none;
-    padding: 10px 20px;
+    padding: 5px 10px;
     border: solid 1px;
     outline: none;
     font-family: Ubuntu;
@@ -10,10 +10,19 @@
     transition: 0.3s ease-in-out;
 
     &:hover {
-        opacity: 0.7;
+        opacity: 0.9;
         cursor: pointer;
         transform: scale(1.005);
     }
+}
+
+.lg {
+    padding: 10px 20px !important;
+}
+
+.mini {
+    font-size: 0.7em;
+    padding: 2px 5px !important;
 }
 
 .rounded {
@@ -48,6 +57,11 @@
 .danger {
     @include bg-danger;
     border-color: $danger;
+}
+
+.info {
+    @include bg-info;
+    border-color: $info;
 }
 
 .light {

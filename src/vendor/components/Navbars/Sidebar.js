@@ -5,65 +5,20 @@ import opencts from '../../../assets/opencts.png';
 import { Icon } from '../Icons/Icon';
 import { Link } from 'react-router-dom';
 
-const links = [
-    {
-        title: 'Navigation',
-        links: [
-            {
-                icon: 'home',
-                label: 'Dashboard',
-                url: '/admin'
-            }
-        ]
-    },
-    {
-        title: 'Ui Element',
-        links: [
-            {
-                icon: 'chart',
-                label: 'Components',
-                links: [
-                    {
-                        icon: 'home',
-                        label: 'Buttons',
-                        url: '/admin/test'
-                    },
-                    {
-                        icon: 'chart',
-                        label: 'Typographies',
-                        url: '/admin/test'
-                    },
-                ]
-            },
-            {
-                icon: 'home',
-                label: 'Layouts',
-                url: '/admin/test'
-            },
-            {
-                icon: 'message',
-                label: 'Views',
-                url: '/admin/test'
-            }
-        ]
-    },
-];
-
 const Sidebar = ({
     logo = opencts,
+    bgColor=null,
     title = 'Open CTS',
     image = bkgd,
     opacity = 0.5,
-    navigations = links,
+    navigations = [],
     opened = true,
     children
 }) => {
-    const color = `rgba(0, 0, 0, ${opacity})`;
-    console.log(children);
+    const color = bgColor ? bgColor : `rgba(0, 0, 0, ${opacity})`;
 
     let css = classes.sidebar;
     css += ' ' + (!opened ? classes['hide-sidebar'] : '');
-    console.log(css);
 
     return <div className={css} style={{
         backgroundColor: color,
@@ -71,7 +26,6 @@ const Sidebar = ({
         backgroundBlendMode: 'multiply',
         backgroundSize: 'cover',
         padding: children ? '0' : '10px'
-
     }}>
 
         {children ? children : <div>

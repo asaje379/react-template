@@ -27,7 +27,7 @@
     justify-content: space-between;
     padding: 12px 15px;
     border: solid 1px $light-gray;
-    border-radius: 3px;
+    border-radius: 7px;
 }
 
 .select {
@@ -36,22 +36,12 @@
 }
 
 .options {
-    box-shadow: 0 2px 7px 0 $gray;
+    box-shadow: 0 2px 5px 0 $gray;
     border-radius: 7px;
     position: absolute;
     z-index: 10;
     width: 100%;
     transition: all 0.5s ease-in-out;
-}
-
-.options-top {
-    box-shadow: 0 2px 7px 0 $gray;
-    border-radius: 7px;
-    position: absolute;
-    z-index: 10;
-    width: 100%;
-    transition: all 0.5s ease-in-out;
-    bottom: 45px;
 }
 
 .option {
@@ -85,5 +75,10 @@
     .labeled-checkbox {
         width: 16px;
         height: 16px;
+    }
+
+    .select-zone {
+        padding: 12px 8px !important;
+        font-size: 0.85em !important;
     }
 }

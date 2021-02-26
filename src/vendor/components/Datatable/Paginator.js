@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Icon } from '../Icons/Icon';
 
 export default function Paginator({
     data,
@@ -8,29 +9,50 @@ export default function Paginator({
 
     const [pages, setPages] = useState([]);
     const [active, setActive] = useState(0);
+    const [start, setStart] = useState(0);
+    const nbr = Math.ceil(data.length / pageSize);
 
     useEffect(() => {
-        const nbr = Math.ceil(data.length / pageSize);
 
-        const p = [];
-        for (let i = 0; i < nbr; ++i) {
-            p.push(i + 1);
+        // console.log(Math.ceil(data.length / pageSize))
+        if (start <= nbr) {
+            const p = [];
+            for (let i = start; i < start + 3 && i < nbr; ++i) {
+                p.push(i + 1);
+            }
+            setPages(p);
         }
+    }, [pageSize, data, start, nbr]);
 
-        setPages(p);
-    }, [pageSize]);
+    const handleNext = () => {
+        setStart(start + 3);
+        setPaginationStart(start + 3);
+    };
+
+    const handleBack = () => {
+        setStart(start - 3);
+        setPaginationStart(start - 3);
+    };
 
     return (
         <div className="paginator">
-           {pages.map((el, index) => <div 
-            key={index} 
-            onClick={() => {
-                setActive(index);
-                setPaginationStart(index);
-            }}
-            className={index === active ? 'active' : ''}>
-               {el}
-           </div>)} 
+            {start !== 0 && <div>
+                <Icon name="back" onClick={handleBack} />
+            </div>}
+            {pages.map((el, index) => <div
+                key={index}
+                onClick={() => {
+                    setActive(index);
+                    setPaginationStart(index);
+                }}
+                className={index === active
+                    ? 'active'
+                    : ''}>
+                {el}
+            </div>)}
+            {start + 3 < nbr && <div>
+                <Icon name="next" onClick={handleNext} />
+            </div>}
         </div>
     )
 }

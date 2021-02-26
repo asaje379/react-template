@@ -1,7 +1,6 @@
-@import '../../scss/colors';
+@import "../../scss/colors";
 
 .input {
-
     color: #444;
 
     input {
@@ -14,7 +13,7 @@
         font-size: 1.2em;
         margin-top: 10px;
         background-color: transparent;
-        
+
         &:hover {
             border: solid 1px $secondary;
         }
@@ -30,22 +29,29 @@
     }
 
     .icon {
-        // margin-right: 4px;
+        margin-right: 10px;
+        margin-left: 5px;
         color: #444;
     }
 
-    margin: 10px;
+    margin: 0px;
+
+    @media (max-width: 800px) {
+        input {
+            padding: 12px 8px !important;
+            font-size: 0.85em !important;
+        }
+    }
 }
 
 .input2 {
-    // margin-bottom: 30px;
     .inputt {
         display: flex;
         align-items: center;
         padding-left: 10px;
         border-radius: 7px;
         border: solid 1px #ddd;
-        
+
         input {
             border: none;
             width: 100%;
@@ -63,9 +69,15 @@
     }
 
     .icon {
-        // margin-right: 4px;
         color: #444;
     }
 
     border: none;
+
+    @media (max-width: 800px) {
+        input {
+            padding: 12px 8px !important;
+            font-size: 0.85em !important;
+        }
+    }
 }
